@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html onclick="display(event)">
+    <head>
+        <title>
+            Beranda
+        </title>
+        <meta name="viewport" content="width=devide-width, initial-scale=1">
+        <style>
+            .container {
+                display: inline-block;
+                cursor: pointer;
+            }
+
+            .topbar {
+                position:absolute;
+                left:4px;
+                top:4px;
+                width:50px;
+                height: 50px;
+                background-color: black;
+                transition: 1s;
+            }
+
+            .bar1, .bar2, .bar3 {
+                width: 40px;
+                height: 4px;
+                background-color: yellow;
+                margin: 9px 5px;
+                transition: 0.5s;
+            }
+            
+            .batas1 {
+                position: absolute;
+                left:0px;
+                top:0px;
+                background-color: yellow;
+                width: 4px;
+                height: 54px;
+            }
+            .batas2 {
+                position: absolute;
+                left:54px;
+                top:0px;
+                background-color: yellow;
+                width: 4px;
+                height: 54px;
+            }
+            .batas3 {
+                position: absolute;
+                left:0px;
+                top:0px;
+                background-color: yellow;
+                width: 58px;
+                height: 4px;
+                transition: 1s;
+            }
+            .batas4 {
+                position: absolute;
+                left:0px;
+                top:54px;
+                background-color: yellow;
+                width: 58px;
+                height: 4px;
+                transition: 1s;
+            }
+            .batas5 {
+                position: absolute;
+                left:54px;
+                top:0px;
+                background-color: yellow;
+                width: 4px;
+                height: 54px;
+                transition: 1s;
+            }
+            
+            .format1 {
+                margin-left: 50px;
+                position:relative;
+                text-align: center;
+                text-anchor: start;
+                top:-65px;
+                font-family:Verdana, Geneva, Tahoma, sans-serif, 'Times New Roman', Times, serif;
+                font-size:20px;
+                text-shadow: 2px 2px gray;
+                transition: 0.5s;
+                
+            }
+
+            .format2 {
+                transition: 1s;
+                position:relative;
+                top:30px;
+            }
+
+            .change .format1 {
+                top: 10px;
+            }
+
+            .kotak {
+                position:absolute;
+                left:0px;
+                top:0px;
+                width:50px;
+                height: 50px;
+                background-color: black;
+                transition: 1s;
+            }
+            .kotak2 {
+                position:absolute;
+                left:0px;
+                top:0px;
+                width:54px;
+                height: 100%;
+                background-color: black;
+                transition: 1s;
+            }
+            .kotak3 {
+                position:absolute;
+                left:54px;
+                top:0px;
+                width:4px;
+                height: 100%;
+                background-color: yellow;
+                transition: 1s;
+            }
+            .text-menu {
+                position:absolute;
+                top:-23px;
+                left:-50px;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Courier, monospace, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 30px;
+                transition: 0.5s;
+                color: yellow;
+            }
+            .change .text-menu {
+                transform:translate(54px,0);
+                font-size: 30px;
+                left: 4px;
+            }
+            .change .topbar {
+                position:absolute;
+                width: 100%;
+            }
+             .change .bar1 {
+                transform: translate(0,13px) rotate(-45deg);
+             }
+             .change .bar3 {
+                transform: translate(0,-13px) rotate(45deg);
+             }
+             .change .bar2 {
+                transform: translate(18px,0) rotate(-90deg);
+                width:54px;
+             }
+             .change .batas3 {
+                position:absolute;
+                width:100%;
+             }
+             .change .batas4 {
+                position:absolute;
+                width:100%;
+             }
+            
+             .bola {
+                display: block;
+                background: rgb(238, 66, 66);
+                border-radius: 50%;
+                position: absolute;
+                top: 100px;
+                left:45%;
+                height: 50px;
+                width: 50px;
+                margin: 0;
+                overflow: hidden;
+                box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+                transform: translateY(-10%);
+                animation: floating 2s infinite;
+                transition: ease-in-out 4s;
+            }
+
+            @keyframes floating {
+                from { transform: translate(0,  0px); }
+                50%  { transform: translate(0, 30px); }
+                to   { transform: translate(0, -0px); }    
+            }
+             @keyframe floater {
+                /*0% {
+                box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+                transform: translatey(10px);
+                }
+                50% {
+                    box-shadow: 0 30px 20px 5px rgba(0,0,0,0.2);
+                    transform: translatey(-200px);
+                }
+                100% {
+                    box-shadow: 0 15px 25px 10px rgba(0,0,0,0.6);
+                    transform: translatey(10px);
+                }*/
+                /*0% {
+                    transform: translate(0,0px);
+                }
+                50% {
+                    transform: translate(0,100px);
+                }
+                100% {
+                    transform: translate(0, -0px);
+                }
+            }*/
+                0% {
+                    transform: translateY(-10%);
+                    transition: ease 0.5s;
+                }
+                50% {
+                    transform: translateY(20%);
+                    transition: ease 0.5s;
+                }
+            }
+
+             .land {
+                display:block;
+                background-color: black;
+                position: absolute;
+                width:100%;
+                height: 8px;
+                top:500px;;
+                left:0px;
+             }
+
+             .tombol {
+                display:block;
+                background-color: rgb(61, 175, 179);
+                position: absolute;
+                width:150px;
+                height: 50px;
+                top:550px;
+                left: 35%;
+
+             }
+             .tombol:hover {
+                cursor: pointer;
+                border: 1px solid black;
+             }
+
+        </style>
+    </head>
+    <body>
+        
+        <div class="container" onclick="myFunction(this)">
+            <div class="kotak2"></div>
+            <div class="kotak3"></div>
+            <div class="batas1"></div>
+            <div class="batas2"></div>
+            <div class="batas3"></div> 
+            <div class="batas4"></div>
+            
+            <div class="topbar">
+                <p class="text-menu"><strong>MENU</strong></p>
+                <div class="kotak">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <p id="p1" class="format1" ><strong>Hai, Selamat Datang!</strong>
+        <br> <h6 style="position: relative;text-align: center;margin-left: 54px;top: -70px;">tekan dua kali untuk dash</h6></p>
+        <div id="ball" class="bola"></div>
+        <div id="line" class="land"></div>
+        <div id="tomb" class="tombol" onclick="jatuh(this)">
+            <p style="position: relative;text-align: center;">jatuhkan bola</p>
+        </div>
+        <script>
+            let a = 0;
+            let y = 100;
+            function myFunction(x) {
+                x.classList.toggle("change");
+                a = a+1;
+                if (a>1){a=0}
+                console.log(a);
+                if (a==1){
+                    document.getElementById("p1").style.transition = "0.7s";
+                    document.getElementById("p1").style.top = "10px";
+                    console.log(document.getElementById("p1").style.transition)
+                    console.log(document.getElementById("p1").style.top)
+                }
+                if (a==0){
+                    document.getElementById("p1").style.transition = "1.5s";
+                    document.getElementById("p1").style.top = "-65px";
+                }
+            }
+
+            function jatuh(x) {
+                let doc = document.getElementById("ball").style;
+                
+            }
+
+            function display(event) {
+                let X = event.clientX;
+                let Y = event.clientY;
+                if (Y > 500) {
+                    Y = 450;
+                }
+                let doc = document.getElementById("ball").style;
+                let Y2 = doc.top;
+                let X2 = doc.left;
+                Y2 = parseInt(Y2);
+                X2 = parseInt(X2);
+                let trueY;
+                let trueX;
+                trueY = Y-Y2;
+                trueX = X-X2;
+                trueX = Math.abs(trueX)
+                trueY = Math.abs(trueY)
+                let range;
+                range = Math.sqrt((Math.pow(trueX,2))+(Math.pow(trueY,2)))
+                console.log(range);
+                //console.log(trueY);
+                let waktu = range/150;
+                //console.log(waktu)
+                doc.transition = waktu+"s";
+                doc.top = Y+"px";
+                doc.left = X+"px";
+            }
+
+        </script>
+    </body>
+</html>
